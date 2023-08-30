@@ -22,13 +22,13 @@ public class TodoEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id",unique = true, nullable = false, insertable = true,updatable = false)
+    @Column(name = "Id",unique = true, nullable = false, insertable = true,updatable = false)
     private Long id;
 
-    @Column(name = "title",length = 500, columnDefinition = "varchar(500) default 'Değer girilmedi'")
+    @Column(name = "Title",length = 500, columnDefinition = "varchar(500) default 'Değer girilmedi'")
     private String title;
 
-    @Column(name = "is_done")
+    @Column(name = "IsDone")
     private boolean isDone;
 
     @CreationTimestamp
