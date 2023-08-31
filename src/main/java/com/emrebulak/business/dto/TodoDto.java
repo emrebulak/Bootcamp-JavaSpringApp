@@ -23,6 +23,6 @@ public class TodoDto extends AuditingAwareBaseDto implements Serializable {
     private String title;
 
     @NotEmpty(message = "{done.validation.constraints.NotNull.message}")
-    private boolean isDone;
+    private boolean done;
 
 }

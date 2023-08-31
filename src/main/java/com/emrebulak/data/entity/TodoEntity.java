@@ -1,5 +1,6 @@
 package com.emrebulak.data.entity;
 
+import com.emrebulak.auditing.AuditingAwareBaseEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -17,7 +18,8 @@ import java.util.Date;
 
 @Entity
 @Table(name = "todos")
-public class TodoEntity implements Serializable {
+public class TodoEntity extends AuditingAwareBaseEntity implements Serializable {
+    //Kullanıcının kayıt ekleme vs değerlerini tutmak için extends AuditingAwareBaseEntityi eklememiz lazım
     public static final Long serialVersionUID = 1L;
 
     @Id
@@ -28,8 +30,8 @@ public class TodoEntity implements Serializable {
     @Column(name = "Title",length = 500, columnDefinition = "varchar(500) default 'Değer girilmedi'")
     private String title;
 
-    @Column(name = "IsDone")
-    private boolean isDone;
+    @Column(name = "Done")
+    private boolean done;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
