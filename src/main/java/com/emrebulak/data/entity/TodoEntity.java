@@ -30,8 +30,8 @@ public class TodoEntity extends AuditingAwareBaseEntity implements Serializable 
     @Column(name = "Title",length = 500, columnDefinition = "varchar(500) default 'Değer girilmedi'")
     private String title;
 
-    @Column(name = "Done")
-    private boolean done;
+    @Column(name = "Done", length = 10, columnDefinition = "varchar(10) default 'Boş'")
+    private String done;
 
     @CreationTimestamp
     @Temporal(TemporalType.TIMESTAMP)
